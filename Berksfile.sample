@@ -1,0 +1,8 @@
+site :opscode
+
+cookbook 'apt'     # manage apt packeaging system for Ubuntu, Debian...
+cookbook 'yum'     # manage yum packeaging system for CentOS, Redhat...
+cookbook 'openssl' # include function secure_password
+
+cookbook 'ntp'
+

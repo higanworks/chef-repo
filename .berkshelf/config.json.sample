@@ -1,0 +1,26 @@
+{
+  "chef": {
+    "chef_server_url": "REPLACE_YOUR_CHEFSERVER",
+    "validation_client_name": "chef-validator",
+    "validation_key_path": ".chef/validation.pem",
+    "client_key": "REPLACE_YOUR_CLIENTPEM",
+    "node_name": "REPLACE_YOUR_CLIENTNAME"
+  },
+  "vagrant": {
+    "vm": {
+      "box": "precise64",
+      "box_url": "http://files.vagrantup.com/precise64.box",
+      "forward_port": {
+
+      },
+      "network": {
+        "bridged": false,
+        "hostonly": "33.33.33.10"
+      },
+      "provision": "chef_solo"
+    }
+  },
+  "ssl": {
+    "verify": false
+  }
+}
