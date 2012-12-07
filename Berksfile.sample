@@ -1,8 +1,24 @@
+metadata
+
 site :opscode
 
 cookbook 'apt'     # manage apt packeaging system for Ubuntu, Debian...
 cookbook 'yum'     # manage yum packeaging system for CentOS, Redhat...
+cookbook 'users'   # manage local users
 cookbook 'openssl' # include function secure_password
 
-cookbook 'ntp'
+# for base_ubuntu only
+group :ubuntu do
+  cookbook "build-essential"
+end
 
+cookbook 'ntp'
+cookbook 'resolver'
+cookbook 'hostsfile'
+cookbook 'postfix'
+
+
+## deploying ruby application
+group :ruby do
+  cookbook "rvm", github: "fnichol/chef-rvm"
+end
